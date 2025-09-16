@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -55,5 +55,134 @@
     update();
     
   </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Page</title>
+    <style>
+        .container {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            border: 1px solid black;
+        }
+        .half {
+            flex: 1;
+            overflow: hidden;
+        }
+        .half.center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="imageDiv" class="half">
+            <img src="bus.png" alt="Placeholder Image">
+        </div>
+        <div class="half center">
+            <button onclick="toggleImage()">Toggle Image</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleImage() {
+            const imageDiv = document.getElementById('imageDiv');
+            imageDiv.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #myImage {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img id="myImage" src="bus.png" alt="Random Image">
+        <button onclick="changeImage()">Change Image</button>
+    </div>
+
+    <script>
+        let currentImage = 1;
+        
+        function changeImage() {
+            currentImage++;
+            const myImage = document.getElementById('myImage');
+            myImage.src = `download.jpeg=${currentImage}`;
+        }
+    </script>
+
 </body>
 </html>
