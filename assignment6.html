@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+  <style>
+    .container {
+      width: 400px; height: 400px;
+      border: 2px solid black;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: space-between;
+      font-family: sans-serif; padding: 20px;
+    }
+    .display { font-size: 48px; margin: 10px; }
+    .alert-box { color: red; font-weight: bold; min-height: 20px; }
+    button { font-size: 24px; margin: 10px; padding: 5px 15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="display" id="display">0</div>
+    <div class="alert-box" id="alertBox"></div>
+    <div>
+      <button onclick="decrement()">−</button>
+      <button onclick="increment()">+</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const min = 0, max = 10;
+
+    function update() {
+      document.getElementById("display").textContent = count;
+      const alertBox = document.getElementById("alertBox");
+      if (count === min) {
+        alertBox.textContent = "⚠️ Minimum Limit Reached!";
+      } else if (count === max) {
+        alertBox.textContent = "⚠️ Maximum Limit Reached!";
+      } else {
+        alertBox.textContent = "";
+      }
+    }
+
+    function increment() {
+      if (count < max) count++;
+      update();
+    }
+
+    function decrement() {
+      if (count > min) count--;
+      update();
+    }
+
+    update();
+  </script>
+</body>
+</html>
