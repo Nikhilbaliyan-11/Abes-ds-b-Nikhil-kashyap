@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Header Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2874f0;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      width: 60px;
+      
+        border-radius: 50%;
+    }
+
+    
+    .search-bar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      margin: 0 40px;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 10px;
+      border: none;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 15px;
+      border: none;
+      background: #ffe11b;
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+    }
+
+    .header-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    
+    .product-row {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .product img {
+      width: 50px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <header class="header">
+   
+    <div class="logo">
+      <img src="download.png".jpg" alt="Flipkart Logo">
+    </div>
+
+   
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, brands and more">
+      <button type="submit">🔍</button>
+    </div>
+
+   
+   <div class="header-links">
+  
+  <a href="#">🛒 Cart</a>
+  <a href="#">👤 Login</a>
+  <a href="#"> <img src="" alt="">Become the best seller</a>
+
+</div>
+
+  </header>
+
+ 
+  <section class="product-row">
+    <div class="product">
+      <img src="e00302d428f5c7be.webp" alt="Shirt">
+      <p>Minutes</p>
+    </div>
+    <div class="product">
+      <img src="5f2ee7f883cdb774.webp" alt="Shoes">
+      <p>Shoes</p>
+    </div>
+    <div class="product">
+      <img src="-original-imagxrhetgfuebnn.jpeg" alt="Watch">
+      <p>Watch</p>
+    </div>
+    <div class="product">
+      <img src="5f2ee7f883cdb774.png" alt="Laptop">
+      <p>Mobile Phones</p>
+    </div>
+    <div class="product">
+      <img src="-original-imagwwcxv9cqds7d.jpeg" alt="Headphones">
+      <p>Home Appliances</p>
+    </div>
+    <div class="product">
+      <img src="e90944802d996756.webp" alt="Watch">
+      <p>Watch</p>
+    </div>
+    <div class="product">
+      <img src="3c647c2e0d937dc5.png" alt="Laptop">
+      <p>Mobile Phones</p>
+    </div>
+    <div class="product">
+      <img src="-original-imahddyzhk9mqnw6.jpeg" alt="Headphones">
+      <p>Home Appliances</p>
+    </div>
+  </section>
+
+</body>
+</html>
