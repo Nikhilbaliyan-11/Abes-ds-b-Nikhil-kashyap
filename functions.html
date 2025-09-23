@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <p id="func"></p>
+    <script>
+       class Car{
+        constructor(make, model, year){
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+       }
+       const myCar1 = new Car("Honda", "Civic", 2022);
+       const myCar2 = new Car("Toyota", "Corolla", 2020);
+       document.getElementById("func").innerHTML = myCar1.make + " " + myCar1.model + " " + myCar1.year + "<br>" + myCar2.make + " " + myCar2.model + " " + myCar2.year;
+
+    </script>
+</body>
+</html>
