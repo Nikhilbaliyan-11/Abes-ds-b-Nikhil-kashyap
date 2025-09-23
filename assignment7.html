@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expandable Student Cards</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    gap: 20px;
+    padding: 50px;
+    background: #f4f4f4;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    width: 300px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 80px; /* collapsed height */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card.expanded {
+    height: 400px; /* expanded height */
+  }
+
+  .card h2 {
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    padding: 10px 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card.expanded .card-content {
+    opacity: 1;
+  }
+
+  .student {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+
+  .student:last-child {
+    border-bottom: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="common-card" onclick="toggleCard('common')">
+  <h2>Common Data (IT Branch)</h2>
+  <div class="card-content" id="common-students"></div>
+</div>
+
+<div class="card" id="uncommon-card" onclick="toggleCard('uncommon')">
+  <h2>Uncommon Data</h2>
+  <div class="card-content" id="uncommon-students"></div>
+</div>
+
+<!-- Embedded JSON -->
+<script id="student-data" type="application/json">
+{
+  "students": [
+    { "name": "Student 1", "class": "B.Tech", "branch": "IT", "roll_no": 123 },
+    { "name": "Student 2", "class": "B.Tech", "branch": "IT", "roll_no": 124 },
+    { "name": "Student 3", "class": "B.Tech", "branch": "IT", "roll_no": 125 },
+    { "name": "Student 4", "class": "B.Tech", "branch": "CSE", "roll_no": 126 },
+    { "name": "Student 5", "class": "B.Tech", "branch": "ECE", "roll_no": 127 },
+    { "name": "Student 6", "class": "M.Tech", "branch": "AI", "roll_no": 128 }
+  ]
+}
+</script>
+
+<script>
+  const students = JSON.parse(document.getElementById('student-data').textContent).students;
+  const common = students.filter(s => s.branch === "IT");
+  const uncommon = students.filter(s => s.branch !== "IT");
+
+  const commonCard = document.getElementById('common-card');
+  const uncommonCard = document.getElementById('uncommon-card');
+  const commonContainer = document.getElementById('common-students');
+  const uncommonContainer = document.getElementById('uncommon-students');
+
+  function render(container, list) {
+    container.innerHTML = ""; // Clear previous content
+    list.forEach(s => {
+      const div = document.createElement('div');
+      div.className = 'student';
+      div.innerHTML = `
+        <strong>${s.name}</strong><br>
+        Class: ${s.class}<br>
+        Branch: ${s.branch}<br>
+        Roll No: ${s.roll_no}
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function toggleCard(type) {
+    const isCommon = type === 'common';
+
+    if (isCommon) {
+      if (!commonCard.classList.contains('expanded')) {
+        commonCard.classList.add('expanded');
+        uncommonCard.classList.remove('expanded');
+        render(commonContainer, common);
+      } else {
+        commonCard.classList.remove('expanded');
+      }
+    } else {
+      if (!uncommonCard.classList.contains('expanded')) {
+        uncommonCard.classList.add('expanded');
+        commonCard.classList.remove('expanded');
+        render(uncommonContainer, uncommon);
+      } else {
+        uncommonCard.classList.remove('expanded');
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
