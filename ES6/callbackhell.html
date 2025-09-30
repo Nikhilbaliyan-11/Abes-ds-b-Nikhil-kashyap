@@ -8,10 +8,11 @@
 <body>
     <script>
 
-        
-        function getdata(dataid){
+
+        function getdata(dataid,callback){
             setTimeout(()=>{
                 console.log("data is fetched for id "+dataid);
+                callback();
             },2000);
         }
 

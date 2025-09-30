@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <h1>promises</h1>
+    <h2>
+        login window
+    </h2>
+    <form id="loginForm">
+        <input type="text" placeholder="username" required>    // is this target[0]? yes
+        <input type="password" placeholder="password" required>  // is this target[1]? yes
+        <button type="submit">login</button>
+    </form>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        //i want to link the login form with a database
+        //if the username and password is correct then login is successful otherwise login failed
+
+        function loginUser(username, password) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (username === "admin" && password === "admin") {
+                        resolve("login successful");
+                    } else {
+                        reject("login failed");
+                    }
+                }, 2000);
+            });
+        }
+
+        loginForm.addEventListener("submit", (e) => {  // e? event object where? in the form 
+            e.preventDefault(); // to prevent form from submitting
+            const username = e.target[0].value;  // how does this work? e.target is the form element, target[0] is the first input field
+            const password = e.target[1].value; // target[1] is the second input field
+
+            loginUser(username, password)  // called the loginUser function
+                .then((message) => {        // if the promise is resolved
+                    console.log(message);  // "login successful"
+                })
+                .catch((error) => { // if the promise is rejected
+                    console.log(error); // "login failed"
+                }); 
+        }); 
+
+    </script>
+</body>
+</html>
