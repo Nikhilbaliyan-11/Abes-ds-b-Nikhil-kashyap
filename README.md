@@ -1,16 +1,71 @@
-# React + Vite
+# JavaScriptInClass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This directory contains web development assignments and practice projects focused on HTML, CSS, and JavaScript concepts covered in class.
 
-Currently, two official plugins are available:
+## 📂 Directory Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. **Bus Booking System** (`assignment2`)
+- **Files**: `assignment2.html`, `assignment2.css`
+- **Description**: A bus ticket booking interface that demonstrates HTML form elements and CSS styling
+- **Features**:
+  - User login form with username and password
+  - Gender selection using radio buttons
+  - City selection dropdown menu
+  - Bus company branding and layout
 
-## React Compiler
+### 2. **Flipkart Header Layout** (`assignment5.html`)
+- **Description**: Recreation of Flipkart e-commerce website header and product grid layout
+- **Features**:
+  - Responsive header with logo and search bar
+  - Product grid display using CSS Grid (8 columns)
+  - Navigation links for cart, login, and seller features
+  - Product card layout with images
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. **Student Form** (`form.html`, `form.css`)
+- **Description**: Student registration form with various input types
+- **Features**:
+  - Text input for student name
+  - Password field for security
+  - Gender selection (radio buttons)
+  - City selection dropdown
+  - Education level checkboxes (10th, 12th, B.Tech, M.Tech)
+  - Submit button
 
-## Expanding the ESLint configuration
+### 4. **JavaScript Functions** (`function.html`)
+- **Description**: Basic JavaScript function demonstrations
+- **Features**:
+  - DOM manipulation examples
+  - Event handling with buttons
+  - JavaScript function definitions and usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖼️ Assets
+
+This directory includes several image files used in the assignments:
+- `bus.png` - Bus icon for booking system
+- `download.png`, `download.jpeg` - Logo images
+- Various `.webp` and `.jpeg` files for product images
+- `3c647c2e0d937dc5.png`, `5f2ee7f883cdb774.png` - Product images
+- Additional image files for layouts
+
+## 📚 Learning Concepts Covered
+
+- **HTML**: Forms, inputs, semantic markup, structure
+- **CSS**: Layout (Flexbox, Grid), styling, responsive design, colors, fonts
+- **JavaScript**: DOM manipulation, event handling, functions (commented examples)
+
+## 🚀 How to Use
+
+1. Open any `.html` file in a web browser to view the project
+2. Inspect the HTML and CSS to understand the structure and styling
+3. Review the JavaScript code for function examples and DOM manipulation
+
+## 📝 Notes
+
+- Some projects are in-class assignments and may contain incomplete features
+- Images are referenced in the HTML files and need to be in the same directory
+- CSS is either inline or linked from external `.css` files
+
+---
+
+**Author**: Nikhil Kashyap  
+**Last Updated**: September 16, 2025
